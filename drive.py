@@ -35,7 +35,13 @@ def Download(args,drive):
 
         # Drive Sheets files as MS Excel files.
         'application/vnd.google-apps.spreadsheet': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'}
-    download_mimetype = mimetypes[file['mimeType']]
+    download_mimetype = None
+    
+    try:
+        download_mimetype = mimetypes[file['mimeType']]
+    except:
+        pass
+
     print('Downloading file %s from Google Drive' % file['title'])
     file.GetContentFile(args['datapath'], mimetype=download_mimetype)
 
