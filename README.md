@@ -20,5 +20,5 @@ optional arguments:
 ## Upload
 ``` python3 drive.py --action upload --datapath <datafile to upload> ```
 
-##Download
+## Download
 ``` python3 drive.py --action download --datapath <dataname to save> ```
